@@ -1,0 +1,42 @@
+#{extends '/layouts/home.html' /}
+#{set title:'Teacher Assistant' /}
+
+<div id="searchDiv"  class="navbar-inner" >
+<br/>
+<br/>
+</div>
+
+
+<script type="text/template" id="search_template">
+<br/>
+<form class="navbar-form pull-left">
+  &nbsp;&nbsp;Class:&nbsp;
+  <select name="class" class=" classDropdown span2">
+	<%_.each(opts, function(val){ %>
+	<option value="<%=val.clazz.id%>"><%=val.clazz.name%></option>
+	<%});%>
+	</select>
+	Student Name:&nbsp; <input id="studentName" name="studentName" type="text"/>
+	<input id="studentId" name="studentId" type="hidden"/>
+</form>
+<br/><br/><br/>
+</script>
+
+
+<script src="@{'/public/javascripts/underscore-min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+<script src="@{'/public/javascripts/backbone-min.js'}"	 type="text/javascript" charset="${_response_encoding}"></script>
+<script src="@{'/public/javascripts/jquery-ui-1.9.2.custom.autocomplete.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>   
+<script src="@{'/public/javascripts/profile.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+
+
+<script type="text/javascript">
+$("document").ready(function(){
+	var profile = new Profile({
+		"dropDownOpts":${dropDownOpts.raw()},
+		"studentsList":${studentsList.raw()}
+	});
+	profile.init();
+
+});
+
+</script>

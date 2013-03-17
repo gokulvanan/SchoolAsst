@@ -1,0 +1,55 @@
+#{extends '/layouts/login.html' /}
+#{set title:'Teacher Assistant' /}
+
+ 
+<div class="row-fluid"  >
+	<div class=" span4" >
+		<h1>About</h1>
+		<p class='lead'>Teacher Assistant is designed to make a Teachers life easy. The
+			idea behind Teacher Assistant is to automate most of the clerical
+			task in a teachers work routine, so that he/she can spend more
+			collective time to the most important part of work i.e. teaching.</p>
+		<div id='func-list'></div>	
+	</div>
+	<div id="func-desc" class="span5 " style="background-color: #eeeeee;margin-left:0;margin-top:3%;height:350px;" >
+	<div id=></div>
+	
+	</div>
+	<div id='slideshowHolder' class="span4  pull-right">
+		<img alt="" src="@{'public/images/off_duty_teacher_assistan.jpg'}">
+		<img alt="" src="@{'public/images/blackboard_worlds_greatest_teacher_assistant_mousepad.jpg'}">
+	</div>
+	
+</div>
+<div class=row-fluid>
+<div class=" " style="background-color: #eeeeee;">
+	<h4>Contact Us</h4>
+	<p>Interested to SignUp. Fill in your Details below and click Send Mail.</p>
+	<span class="text-error ">${emailMsg}</span>
+	#{form @Login.sendMail()}
+	<textarea name="mailBody" id="mailBody" rows="5" cols="1000" style="width:1000px" 
+	placeholder="Please provide, contact Name,number and email. School Name and Product Intrested in"></textarea>
+	<br/>
+	<button type="submit" value="Submit">Send Mail</button>
+	#{/form}	
+	</div>
+</div>
+
+<script src="@{'/public/javascripts/jqFancyTransitions.1.8.min.js'}" type="text/javascript" ></script>
+<script src="@{'/public/javascripts/login.js'}" type="text/javascript" ></script>
+
+<!--
+<script type="text/template" id="func-list-item">
+	<p  id="<%= id %>" class="lead func-list" onmouseover='module.showDetails(<%= id %>)'><a href='#funcDetail/<%= id %>'><%= name %></a></p>
+</script>
+<script type="text/template" id="func-info">
+<h2><%=name %></h2>
+<p class="lead"><%=desc%></p>
+<p class="lead"><%=desc%></p>
+<p class="lead"><%=image%></p>
+
+</script>
+<script src="@{'/public/javascripts/underscore.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+<script src="@{'/public/javascripts/backbone.js'}"	 type="text/javascript" charset="${_response_encoding}"></script>   
+<script src="@{'/public/javascripts/functionality_backbone.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+-->

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>#{get 'title' /}</title>
+        <meta >
+        <link rel="stylesheet" media="screen" href="@{'/public/bootstrap/css/bootstrap.css'}">
+        <link rel="stylesheet" media="screen" href="@{'/public/bootstrap/css/bootstrap-responsive.css'}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
+        #{get 'moreStyles' /}
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+        <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" ></script>
+        #{get 'moreScripts' /}
+    </head>
+    <body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+			 <ul class="nav">
+            <!--     <li ><a href="#">Home</a></li> -->
+              <li class="active"><a href="@{Login.index}">Teacher Assistant</a></li>
+             <!--   <li><a href="#">Family Tree Network</a></li>-->
+           	 </ul>
+           	 <div class="nav-collapse collapse pull-right">
+				 <ul class="nav">			
+					<li><a>Welcome ${session.get("name") ? session.get("name") : 'Guest'}</a></li>
+					#{if session.get("name") != null }
+					<li><a href="@{Login.logout}">Logout</a></li>
+					#{/if}
+				</ul>
+			</div>
+				<!--/.nav-collapse -->
+			</div>
+		</div>
+	</div>
+	
+	#{doLayout /}
+	
+	</body>
+    <footer>
+    <div class="modal-footer ">
+    <span class="pull-left">Copyright of *****</span>
+			<a href="#"></a>
+		
+    </div>
+	</footer>
+	<!-- StartupScripts -->
+	
+</html>

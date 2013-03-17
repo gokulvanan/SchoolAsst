@@ -1,0 +1,8 @@
+1) backbone.js functinoality in page 1 has bugs on reload/back button need a better robust fix
+2) Dropdown for Student Profiler needs to be added. 
+3) Work on update functionality via backbone.js for Timetable cells; Check on jquery plugins to improve UI
+4) Bugs
+	 keep TeacherAssistant Module Link not clickale
+	 Login option is hiddedn when logged in
+5) Build ReportManager Screen to list out Students and marks for tests that have been configured
+6) May need to build a Configuration module to configure app as per teacher/school requirement  

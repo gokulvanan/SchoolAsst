@@ -1,0 +1,18 @@
+#{extends '/layouts/base.html' /}
+<div class="container-fluid">
+	<div class="navbar ">
+	    <ul class="nav">
+	    #{list items:modules, as:'module'}
+	      <li id="${module.id}" class="${(module.id==selected) ? 'active' : 'none'}"><a href="${module.url}">${module.name}</a></li>
+	     #{/list}
+	    </ul>
+	</div>
+</div>
+
+<link rel="stylesheet" media="screen" href="@{'/public/jqgrid/css/jquery-ui-1.9.2.custom.css'}">
+<link rel="stylesheet" media="screen" href="@{'/public/jqgrid/css/ui.jqgrid.css'}">
+<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/overrideJqgrid.css'}">
+<script src="@{'/public/jqgrid/js/grid.locale-en.js'}" type="text/javascript" ></script>
+<script src="@{'/public/jqgrid/js/jquery.jqGrid.min.js'}" type="text/javascript" ></script>
+        
+	#{doLayout /}

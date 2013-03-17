@@ -1,0 +1,25 @@
+#{extends '/layouts/base.html' /}
+	<div class="container-fluid">
+	<div class="page-header ">
+	    
+	    <div class="pull-right">
+	    #{if session.get("name") == null }
+	    	<span class="text-error ">${msg}</span>
+		    #{form @Login.authenticate(), class:'form-inline'}
+				  <input id="email" name="email" type="text" class="input-medium" placeholder="Email">&nbsp;
+				  <input id="password" name="password" type="password" class="input-medium" placeholder="Password">
+				  <button type="submit" class="btn">Login</button>
+			#{/form}
+		#{/if}
+		#{else}
+		<p>You are already Logged in... <a href="@{Login.redirect()}"> Click Here to Enter</a></p> 	
+		#{/else}
+		</div>
+		
+		<h1>Welcome to Teacher Assistant</h1>
+	    <h5>(The one stop application to automate all teacher related clerical task)</h5>
+	 </div>
+		#{doLayout /}
+	</div>
+	
+
